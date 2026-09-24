@@ -1,0 +1,62 @@
+//4)	Dado o valor do produto e a forma de pagamento.
+//1= à vista;
+//2= à prazo.
+
+//Se o produto for pago à vista aplique um desconto de 10% antes de mostrar o valor final, 
+//senão informe o mesmo valor do produto.
+
+#include <stdio.h>
+int main()
+{
+    int pagamento, qtd;
+    float valor;
+    
+    printf("INTERFACE:");
+    printf("\nDigite o valor da compra do usuario:");
+    scanf("%f", &valor);
+    while(valor<0)
+    {
+        printf("\nERRO NO VALOR DIGITADO!");
+        printf("\nDigite novamente o valor da compra:");
+        scanf("%f", &valor);
+    }
+    
+    printf("\nFORMA DE PAGAMENTO");
+    printf("\n|MENU|");
+    printf("\n|A Vista DIGITE 1|");
+    printf("\n|A prazo DIGITE 2|");
+    printf("\nDigite a forma de pagamento:");
+    scanf("%d", &pagamento);
+    
+    while(pagamento<1 || pagamento>2)
+    {
+       printf("\nFORMA DE PAGAMENTO INCORRETA!");    
+       printf("\n|MENU|");
+       printf("\n|A Vista DIGITE 1|");
+       printf("\n|A prazo DIGITE 2|");
+       printf("\nDigite a forma de pagamento novamente:");
+       scanf("%d", &pagamento);
+    }
+    switch(pagamento)
+    {
+        case 1: printf("\nPagamento a |VISTA 10%| de desconto:%.2f", valor = valor*0.90);
+                break;
+                
+
+        case 2:  
+                 printf("\n|MENU DE PARCELAS|");
+                 printf("\n|DE (1 UMA) ATE (12 DOZE) VEZES!|");
+                 printf("\nDigite a quantidade de parcelas:");
+                 scanf("%d", &qtd);
+                  
+                  while(qtd<2 || qtd>12)
+                  {
+                      printf("\n|MENU DE PARCELAS|");
+                      printf("\n|DE (1 UMA) ATE (12 DOZE) VEZES!|");
+                      printf("\nDigite o valor da percela novamente:");
+                      scanf("%d", &qtd);
+                  }
+                printf("\nValor Total da compra:%.2f", valor);
+                printf("\nValor do pagamento a longo prazo|PARCELAS|:%.2f", valor=valor/qtd);
+    }
+}
