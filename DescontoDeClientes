@@ -1,0 +1,46 @@
+//1)	Uma loja fornece 10% de desconto para funcionários e 5% de desconto para clientes vips. Faça um programa que calcule 
+//o valor total a ser pago por uma pessoa. O programa deverá ler o valor total da compra 
+//efetuada e um código que identifique se o comprador é um cliente comum (1), funcionário (2) ou vip (3).
+
+
+#include <stdio.h>
+int main()
+{
+    int cliente, valor;
+    
+    printf("\nDigite o valor total da compra do cliente:");
+    scanf("%d", &valor);
+    
+    printf("\nMENU");
+    printf("\n| Cliente Comum DIGITE 1 |");
+    printf("\n| Funcionario DIGITE 2 |");
+    printf("\n| Cliente Vip DIGITE 3 |\n");
+    
+    printf("\nDigite o tipo de cliente:");
+    scanf("%d", &cliente);
+    
+    while(cliente<1 || cliente>3)
+    {
+        printf("\n!TIPO DE CLIENTE NAO ENCONTRADO!");
+        
+        printf("\nMENU");
+        printf("\n| Cliente Comum DIGITE 1 |");
+        printf("\n| Funcionario DIGITE 2 |");
+        printf("\n| Cliente Vip DIGITE 3 |\n");
+        
+        printf("\nDigite novamente o tipo de cliente:");
+        scanf("%d", &cliente);
+    }
+    
+    switch(cliente)
+    {
+        case 1: printf("\nCliente Comum |SEM DESCONTO|:%d", cliente = valor);
+                break;
+            
+        case 2: printf("\nFuncionario |DESCONTO DE 10%|:%d", cliente = valor*0.90);
+                break;
+                
+        default: printf("\nCliente Vip |DESCONTO DE 5%|:%d", cliente = valor*0.95);
+        
+    }
+}
